@@ -168,3 +168,56 @@ body {
 .clear_both {
   clear: both;
 }
+
+@media screen and (max-width: 500px) {
+  .timeline {
+    margin: 0px;
+    background: #81194c url(../images/background_small.jpg) no-repeat center 0px;
+  }
+  .timeline h1 {
+    text-align: left;
+    padding: 10px 10px 10px 20px;
+  }
+  .timeline .panel_container {
+    height: auto;
+    background: none;
+    filter: none;
+    margin: 0px;
+  }
+  .timeline .panel_slider {
+    position: static;
+    height: auto;
+  }
+  .timeline .panel {
+    width: auto;
+    height: auto;
+    position: static;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 20px;
+  }
+  .timeline nav {
+    display: none;
+  }
+  .timeline .background_slider {
+    display: none;
+  }
+  .timeline .panel:first-child {
+    padding-top: 40px;
+  }
+  .timeline .panel_content {
+    padding-top: 60px;
+  }
+  .timeline .panel_content .label {
+    top: -10px;
+    right: 10x;
+  }
+  .timeline .panel img.www {
+    margin: 0px 25px 0px 0px;
+  }
+  .timeline .panel img.voip {
+    margin: 10px 40px 0px 20px;
+  }
+  .timeline .panel img.telecommunications_usage {
+    margin: 10px 15px 0px 0px;
+  }
+}

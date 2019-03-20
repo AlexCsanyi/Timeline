@@ -10,6 +10,7 @@ $(document).ready(function() {
   timelineWidth = $(".timeline").width();
   totalPanels = $(".timeline .panel").length;
   adjustLayout();
+  setInterval(checkWindowSize, 1000);
 });
 
 function adjustLayout() {
@@ -31,6 +32,7 @@ function adjustLayout() {
 function activateNavigation() {
   $(".timeline nav a").on("click", function() {
     currentPanel = $(this).index();
+    timelineWidth = $(".timeline").width();
 
     $(".timeline nav a").removeClass("selected");
     $(this).addClass("selected");
@@ -54,4 +56,23 @@ function activateNavigation() {
       1000
     );
   });
+}
+
+function checkWindowSize() {
+  var newTimelineWidth = $(".timeline").width();
+
+  if (newTimelineWidth > 500 && timelineWidth > 500) {
+  } else if (newTimelineWidth < 500 && timelineWidth < 500) {
+  } else {
+    if (newTimelineWidth > 500 && timelineWidth < 500) {
+      firstRun = true;
+    }
+  }
+
+  timelineWidth = newTimelineWidth;
+
+  if (firstRun == true) {
+    $(".timeline nav a:nth-child(" + (currentPanel + 1) + ")").trigger("click");
+    firstRun = false;
+  }
 }
